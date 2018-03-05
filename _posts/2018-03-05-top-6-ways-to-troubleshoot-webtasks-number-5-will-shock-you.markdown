@@ -202,6 +202,7 @@ Using the Logs panel in the editor, we were able to watch live executions of our
 
 Connecting to the log stream is a snap with the CLI.
 
+- Open a terminal application
 - Execute the command `wt logs`
 
 The webtask CLI will take over your console session and begin streaming log messages. We can see the connection message already.
@@ -263,7 +264,33 @@ We can see the custom logs messages from both the `call-log-panel` and the `log-
 
 **Note:** At any time you can hit `ctrl-c` to disconnect from the log stream.
 
-### Run Locally
+### Run webtask locally
+
+At this point, we are still deploying a webtask to the platform every time we wish to test its execution. The webtask CLI gives us the ability to host our webtask logic locally. We can then iterate faster on the logic and only deploy once we are satisfied it is working correctly.
+
+Let's create a local copy of our last webtask and host locally using the CLI.
+
+- Open a terminal application
+- Execute the command `touch task.js`
+- Open the task.js file in a text editor
+- Copy the `call-log-panel` code into the file
+- Save the file
+
+We now have a local version of our webtask. To execute it locally, we need access to the requestjs node module. We can use a standard node package.json as if we were working on a regular node project.
+
+- Execute the command `npm init`
+- Accept the default values by hitting `Enter` until the package.json is written
+- Execute the command `npm install request --save`
+
+We can now run the webtask code locally using the CLI.
+
+- Execute the command `wt serve task.js`
+
+The CLI will spin up the webtask listening on port 8080 and begin waiting for a request.
+
+- Open a new browser tab
+- Navigate to http://localhost:8080
+
 
 ### Debugging with Devtool
 
