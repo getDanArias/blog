@@ -215,7 +215,7 @@ We can test this functionality out pretty easily using the webtask we created ea
 
 We now see the same runtime exception we got earlier streaming to our console session. Let's create a new webtask that uses the requestjs node module to call our existing webtask to see how the streaming logs show output for both webtasks.
 
-- Click the **Create New** icon located in the left hand navigation of  the editor
+- Click the **Create New** icon located in the left-hand navigation of  the editor
 - In the Create New modal select the **Create empty** option
 - Name the webtask `call-log-panel`
 - Click the **Save** button
